@@ -1,0 +1,212 @@
+#map {
+    width: 900px;
+    height: 900px;
+    float: left;
+    position: static;
+    transition-property: opacity;
+    transition-duration: 1s;
+}
+
+.gem {
+    position: absolute;
+    transition-property: top, left, opacity, transform, color;
+    transition-duration: 0.4s;
+    width: 90px;
+    height: 90px;
+    min-height: 90px;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.gem:hover {
+    height: auto;
+    //box-shadow: 0px 0px 3px 3px rgba(255, 255, 555, 1);
+    box-shadow: 2px 2px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.selected {
+    //box-shadow: 1px 1px 2px 2px rgba(0, 22, 55, 0.5);
+    //box-shadow: 0px 0px 3px 3px rgba(255, 222, 55, 1);
+    transform: rotate(15deg);
+    z-index: 10;
+}
+
+.highlighted {
+    box-shadow: 0px 0px 3px 3px rgba(255, 255, 555, 1);
+}
+
+
+.A {
+    background-color: #ba6233;
+}
+
+.B {
+    background-color: #c8bc48;
+}
+
+.C {
+    background-color: #50bd3c;
+}
+
+.D {
+    background-color: #4557c5;
+}
+
+.E {
+    background-color: #c65873;
+}
+
+.axe {
+    background-color: #8d93ac;
+    border-radius: 1em;
+}
+
+.stone {
+    background-color: #8d93ac;
+    border-radius: 1em;
+}
+
+.stone[health="5"] {
+    color: rgba(0, 0, 0, 0);
+}
+
+.stone[health="4"] {
+    color: rgba(0, 0, 0, 0.1);
+}
+
+.stone[health="3"] {
+    color: rgba(0, 0, 0, 0.2);
+}
+
+.stone[health="2"] {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.stone[health="1"] {
+    color: rgba(0, 0, 0, 1);
+}
+
+
+.item {
+    background-color: #8d93ac;
+    border-radius: 1em;
+}
+
+
+.smash-h {
+    height: 40px;
+    min-height: 40px;
+}
+
+.smash-v {
+    width: 40px;
+}
+
+.bomb {
+    background-color: #181a0b;
+    border-radius: 2em;
+}
+
+body {
+    background-color: #dcd7d2;
+}
+
+.message {
+    transition-property: opacity;
+    transition-duration: 0.4s;
+    position: absolute;
+    background-color: rgba(200, 200, 200, 0.9);
+    padding: 3em;
+    border-radius: 1em;
+    width: 748px;
+    height: 748px;
+    text-align: center;
+}
+
+#chooser {
+    transition-property: opacity;
+    transition-duration: 0.4s;
+    opacity: 0;
+    position: absolute;
+    background-color: rgba(200, 200, 200, 0.9);
+    padding: 3em;
+    border-radius: 1em;
+    width: 748px;
+    height: 748px;
+    text-align: center;
+}
+
+#chooser.shown {
+    opacity: 1;
+}
+
+.answer-key {
+    font-size: 0.7em;
+}
+
+.answer-text {
+    font-size: 1.5em;
+}
+
+.answer {
+    cursor: pointer;
+    margin: 1em;
+}
+
+.answer.disabled {
+    color: #aaaaaa;
+    cursor: not-allowed;
+}
+
+.pulsating {
+    content: 'pulsating';
+    animation-duration: 0.2s;
+    animation-name: pulsating;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes pulsating {
+    from {
+        transform: rotate(5deg);
+    }
+
+    to {
+        transform: rotate(-5deg);
+    }
+}
+
+.touched {
+    content: 'touched';
+    animation-duration: 0.4s;
+    animation-name: touched;
+    animation-iteration-count: 1;
+    //animation-direction: alternate;
+}
+
+
+@keyframes touched {
+    from {
+        transform: rotate(0deg);
+    }
+
+    20% {
+        transform: rotate(-9deg);
+    }
+
+    50% {
+        transform: rotate(9deg);
+    }
+
+    75% {
+        transform: rotate(-3deg);
+    }
+
+
+    to {
+        transform: rotate(0deg);
+    }
+}
